@@ -127,6 +127,42 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Resources\NotoKufiArabic-Bold.ttf" />
+    <None Include="Resources\NotoKufiArabic-Regular.ttf" />
+    <None Include="Resources\NotoMono-Regular.ttf" />
+    <None Include="Resources\NotoNaskhArabic-Bold.ttf" />
+    <None Include="Resources\NotoNaskhArabic-Regular.ttf" />
+    <None Include="Resources\NotoNaskhArabicUI-Bold.ttf" />
+    <None Include="Resources\NotoNaskhArabicUI-Regular.ttf" />
+    <None Include="Resources\NotoSans-Bold.ttf" />
+    <None Include="Resources\NotoSans-BoldItalic.ttf" />
+    <None Include="Resources\NotoSans-Condensed.ttf" />
+    <None Include="Resources\NotoSans-CondensedBold.ttf" />
+    <None Include="Resources\NotoSans-CondensedBoldItalic.ttf" />
+    <None Include="Resources\NotoSans-CondensedItalic.ttf" />
+    <None Include="Resources\NotoSans-Italic.ttf" />
+    <None Include="Resources\NotoSans-Light.ttf" />
+    <None Include="Resources\NotoSans-LightItalic.ttf" />
+    <None Include="Resources\NotoSans-Regular.ttf" />
+    <None Include="Resources\NotoSansArabic-Bold.ttf" />
+    <None Include="Resources\NotoSansArabic-Regular.ttf" />
+    <None Include="Resources\NotoSansArabicUI-Bold.ttf" />
+    <None Include="Resources\NotoSansArabicUI-Regular.ttf" />
+    <None Include="Resources\NotoSansArmenian-Bold.ttf" />
+    <None Include="Resources\NotoSansArmenian-Regular.ttf" />
+    <None Include="Resources\NotoSansGeorgian-Bold.ttf" />
+    <None Include="Resources\NotoSansGeorgian-Regular.ttf" />
+    <None Include="Resources\NotoSansHebrew-Bold.ttf" />
+    <None Include="Resources\NotoSansHebrew-Regular.ttf" />
+    <None Include="Resources\NotoSansLao-Bold.ttf" />
+    <None Include="Resources\NotoSansLao-Regular.ttf" />
+    <None Include="Resources\NotoSansLisu-Regular.ttf" />
+    <None Include="Resources\NotoSerif-Bold.ttf" />
+    <None Include="Resources\NotoSerifArmenian-Bold.ttf" />
+    <None Include="Resources\NotoSerifArmenian-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-stack_2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

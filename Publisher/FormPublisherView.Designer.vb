@@ -47,6 +47,7 @@ Partial Class FormPublisherDisplay
         Me.lblCompanyNameOut = New System.Windows.Forms.Label()
         Me.lblPublisherNameOut = New System.Windows.Forms.Label()
         Me.lblPublisherIDOut = New System.Windows.Forms.Label()
+        Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuPublisherViewer.SuspendLayout()
         Me.grpPublisherInfo.SuspendLayout()
         Me.SuspendLayout()
@@ -64,6 +65,7 @@ Partial Class FormPublisherDisplay
         '
         'FileToolStripMenuItem
         '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuExit})
         Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(45, 22)
@@ -350,6 +352,12 @@ Partial Class FormPublisherDisplay
         Me.lblPublisherIDOut.Text = "8888888888"
         Me.lblPublisherIDOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'mnuExit
+        '
+        Me.mnuExit.Name = "mnuExit"
+        Me.mnuExit.Size = New System.Drawing.Size(180, 22)
+        Me.mnuExit.Text = "E&xit"
+        '
         'FormPublisherDisplay
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -399,4 +407,5 @@ Partial Class FormPublisherDisplay
     Friend WithEvents lblCompanyNameOut As Label
     Friend WithEvents lblPublisherNameOut As Label
     Friend WithEvents lblPublisherIDOut As Label
+    Friend WithEvents mnuExit As ToolStripMenuItem
 End Class
