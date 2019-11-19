@@ -33,20 +33,140 @@ Public Class FormPublisherDisplay
         Console.WriteLine(Me.ContactsDataSet.Tables.ToString)
         Dim dv As DataView = ContactsDataSet.Tables("Publishers").DefaultView
 
+        Dim pubs As DataTable = ContactsDataSet.Tables("Publisher")
+
+
+
+
         cboPublisher.DataSource = dv
         cboPublisher.DisplayMember = "Name"
         cboPublisher.ValueMember = "PubID"
 
         'This shows the data from the data set
-        For Each thisTable In Me.ContactsDataSet.Tables
-            ' For each row, print the values of each column.
-            Dim row As DataRow
-            For Each row In thisTable.Rows
-                Dim column As DataColumn
-                For Each column In thisTable.Columns
-                    Console.WriteLine(row(column))
-                Next column
-            Next row
-        Next thisTable
+        'For Each thisTable In Me.ContactsDataSet.Tables
+
+        '    ' For each row, print the values of each column.
+        '    Dim row As DataRow
+        '    For Each row In thisTable.Rows
+        '        Dim column As DataColumn
+
+        '        For Each column In thisTable.Columns
+
+        '            Console.WriteLine(row(column))
+        '        Next column
+        '    Next row
+        'Next thisTable
+
+        Dim dt As New DataTable()
+        'create the datatable
+        dt.Columns.Add(New DataColumn("Country"))
+        dt.Columns.Add(New DataColumn("City"))
+        dt.Columns.Add(New DataColumn("Name"))
+        'Store first row
+        Dim row As DataRow = dt.NewRow()
+
+        row("Country") = "Canada"
+        row("City") = "Ontario"
+        row("Name") = "Cambridge"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "United States"
+        row("City") = "CA"
+        row("Name") = "San Francisco"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "Canada"
+        row("City") = "Ontario"
+        row("Name") = "Hamilton"
+        dt.Rows.Add(row)
+        row = dt.NewRow()
+        row("Country") = "Canada"
+        row("City") = "Ontario"
+        row("Name") = "Milton"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "United Kingdom"
+        row("City") = "Wales"
+        row("Name") = "Bangor"
+        dt.Rows.Add(row)
+        row = dt.NewRow()
+        row("Country") = "United Kingdom"
+        row("City") = "Wales"
+        row("Name") = "Cardiff"
+        dt.Rows.Add(row)
+
+
+        row = dt.NewRow()
+        row("Country") = "Canada"
+        row("City") = "Ontario"
+        row("Name") = "Halton"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "United Kingdom"
+        row("City") = "Wales"
+        row("Name") = "Swansea"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "United States"
+        row("City") = "CA"
+        row("Name") = "Los Angeles"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "United States"
+        row("City") = "CA"
+        row("Name") = "Merced"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "United States"
+        row("City") = "CA"
+        row("Name") = "Morgan Hill"
+        dt.Rows.Add(row)
+
+        row = dt.NewRow()
+        row("Country") = "United Kingdom"
+        row("City") = "Wales"
+        row("Name") = "New Port"
+        dt.Rows.Add(row)
+
+        Dim dj As New DataView()
+        dj = dt.DefaultView
+        'Adding multiple filter
+        'You can change this condition to Or instead of AND
+        dj.RowFilter = "City  like '" + "Wa" + "%' AND Country like '" + "Un" + "%'"
+
+        'Retreiving top 2 values 
+        'For demo we are fetching only two . you can change this in your final code
+        Dim sortedRows As IEnumerable(Of DataRow) = dj.Cast(Of DataRowView)().Take(2).[Select](Function(r) r.Row)
+
+        'Convert that to string array
+        'Change the column index as per your need
+        Dim rowAsString = String.Join(", ", sortedRows.Select(Function(c) c(0).ToString()).ToArray())
+        Console.WriteLine(rowAsString)
+
+
+
+
     End Sub
+    Private Sub PrintTableOrView(ByVal view As DataView, ByVal label As String)
+        Console.WriteLine(label)
+        Dim i As Integer
+        For i = 0 To view.Count - 1
+
+            Console.WriteLine(view(i)("column"))
+        Next
+        Console.WriteLine()
+    End Sub
+
+
+    'https://docs.microsoft.com/en-us/dotnet/api/system.data.dataview.totable?redirectedfrom=MSDN&view=netframework-4.8#System_Data_DataView_ToTable_System_Boolean_System_String___
+    'https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/filtering-with-dataview-linq-to-dataset
+    'https://forums.asp.net/t/2097404.aspx?DataView+filter+and+returning+a+string+array
+
 End Class
