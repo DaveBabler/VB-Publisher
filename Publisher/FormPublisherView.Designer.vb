@@ -22,22 +22,16 @@ Partial Class FormPublisherDisplay
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPublisherDisplay))
         Me.mnuPublisherViewer = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblSelectPublisher = New System.Windows.Forms.Label()
         Me.cboPublisher = New System.Windows.Forms.ComboBox()
         Me.grpPublisherInfo = New System.Windows.Forms.GroupBox()
-        Me.lblPublisherID = New System.Windows.Forms.Label()
-        Me.lblPublisherName = New System.Windows.Forms.Label()
-        Me.lblCompanyName = New System.Windows.Forms.Label()
-        Me.lblPublisherAddress = New System.Windows.Forms.Label()
-        Me.lblPublisherCity = New System.Windows.Forms.Label()
-        Me.lblPublisherState = New System.Windows.Forms.Label()
-        Me.lblPublisherZip = New System.Windows.Forms.Label()
-        Me.lblPublisherPhone = New System.Windows.Forms.Label()
-        Me.lblPublisherFax = New System.Windows.Forms.Label()
         Me.lblPublisherFaxOut = New System.Windows.Forms.Label()
         Me.lblPublisherPhoneOut = New System.Windows.Forms.Label()
         Me.lblPublisherZipOut = New System.Windows.Forms.Label()
@@ -47,9 +41,38 @@ Partial Class FormPublisherDisplay
         Me.lblCompanyNameOut = New System.Windows.Forms.Label()
         Me.lblPublisherNameOut = New System.Windows.Forms.Label()
         Me.lblPublisherIDOut = New System.Windows.Forms.Label()
-        Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblPublisherFax = New System.Windows.Forms.Label()
+        Me.lblPublisherPhone = New System.Windows.Forms.Label()
+        Me.lblPublisherZip = New System.Windows.Forms.Label()
+        Me.lblPublisherState = New System.Windows.Forms.Label()
+        Me.lblPublisherCity = New System.Windows.Forms.Label()
+        Me.lblPublisherAddress = New System.Windows.Forms.Label()
+        Me.lblCompanyName = New System.Windows.Forms.Label()
+        Me.lblPublisherName = New System.Windows.Forms.Label()
+        Me.lblPublisherID = New System.Windows.Forms.Label()
+        Me.ContactsDataSet = New Publisher.ContactsDataSet()
+        Me.PublishersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PublishersTableAdapter = New Publisher.ContactsDataSetTableAdapters.PublishersTableAdapter()
+        Me.TableAdapterManager = New Publisher.ContactsDataSetTableAdapters.TableAdapterManager()
+        Me.PublishersBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.PublishersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.mnuPublisherViewer.SuspendLayout()
         Me.grpPublisherInfo.SuspendLayout()
+        CType(Me.ContactsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PublishersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PublishersBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PublishersBindingNavigator.SuspendLayout()
         Me.SuspendLayout()
         '
         'mnuPublisherViewer
@@ -71,6 +94,12 @@ Partial Class FormPublisherDisplay
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(45, 22)
         Me.FileToolStripMenuItem.Text = "&File"
         '
+        'mnuExit
+        '
+        Me.mnuExit.Name = "mnuExit"
+        Me.mnuExit.Size = New System.Drawing.Size(102, 22)
+        Me.mnuExit.Text = "E&xit"
+        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
@@ -82,7 +111,7 @@ Partial Class FormPublisherDisplay
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.AboutToolStripMenuItem.Text = "&About"
         '
         'lblSelectPublisher
@@ -135,114 +164,6 @@ Partial Class FormPublisherDisplay
         Me.grpPublisherInfo.TabIndex = 3
         Me.grpPublisherInfo.TabStop = False
         Me.grpPublisherInfo.Text = "Publisher Information"
-        '
-        'lblPublisherID
-        '
-        Me.lblPublisherID.AutoSize = True
-        Me.lblPublisherID.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherID.Location = New System.Drawing.Point(65, 38)
-        Me.lblPublisherID.Name = "lblPublisherID"
-        Me.lblPublisherID.Size = New System.Drawing.Size(116, 22)
-        Me.lblPublisherID.TabIndex = 0
-        Me.lblPublisherID.Text = "Publisher ID:"
-        Me.lblPublisherID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblPublisherName
-        '
-        Me.lblPublisherName.AutoSize = True
-        Me.lblPublisherName.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherName.Location = New System.Drawing.Point(35, 78)
-        Me.lblPublisherName.Name = "lblPublisherName"
-        Me.lblPublisherName.Size = New System.Drawing.Size(146, 22)
-        Me.lblPublisherName.TabIndex = 1
-        Me.lblPublisherName.Text = "Publisher Name:"
-        Me.lblPublisherName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblCompanyName
-        '
-        Me.lblCompanyName.AutoSize = True
-        Me.lblCompanyName.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblCompanyName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblCompanyName.Location = New System.Drawing.Point(37, 118)
-        Me.lblCompanyName.Name = "lblCompanyName"
-        Me.lblCompanyName.Size = New System.Drawing.Size(144, 22)
-        Me.lblCompanyName.TabIndex = 2
-        Me.lblCompanyName.Text = "Company Name:"
-        Me.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblPublisherAddress
-        '
-        Me.lblPublisherAddress.AutoSize = True
-        Me.lblPublisherAddress.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherAddress.Location = New System.Drawing.Point(101, 158)
-        Me.lblPublisherAddress.Name = "lblPublisherAddress"
-        Me.lblPublisherAddress.Size = New System.Drawing.Size(80, 22)
-        Me.lblPublisherAddress.TabIndex = 3
-        Me.lblPublisherAddress.Text = "Address:"
-        Me.lblPublisherAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblPublisherCity
-        '
-        Me.lblPublisherCity.AutoSize = True
-        Me.lblPublisherCity.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherCity.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherCity.Location = New System.Drawing.Point(130, 198)
-        Me.lblPublisherCity.Name = "lblPublisherCity"
-        Me.lblPublisherCity.Size = New System.Drawing.Size(51, 22)
-        Me.lblPublisherCity.TabIndex = 4
-        Me.lblPublisherCity.Text = "City: "
-        Me.lblPublisherCity.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblPublisherState
-        '
-        Me.lblPublisherState.AutoSize = True
-        Me.lblPublisherState.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherState.Location = New System.Drawing.Point(122, 238)
-        Me.lblPublisherState.Name = "lblPublisherState"
-        Me.lblPublisherState.Size = New System.Drawing.Size(59, 22)
-        Me.lblPublisherState.TabIndex = 5
-        Me.lblPublisherState.Text = "State: "
-        Me.lblPublisherState.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblPublisherZip
-        '
-        Me.lblPublisherZip.AutoSize = True
-        Me.lblPublisherZip.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherZip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherZip.Location = New System.Drawing.Point(139, 278)
-        Me.lblPublisherZip.Name = "lblPublisherZip"
-        Me.lblPublisherZip.Size = New System.Drawing.Size(42, 22)
-        Me.lblPublisherZip.TabIndex = 6
-        Me.lblPublisherZip.Text = "Zip:"
-        Me.lblPublisherZip.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblPublisherPhone
-        '
-        Me.lblPublisherPhone.AutoSize = True
-        Me.lblPublisherPhone.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherPhone.Location = New System.Drawing.Point(44, 318)
-        Me.lblPublisherPhone.Name = "lblPublisherPhone"
-        Me.lblPublisherPhone.Size = New System.Drawing.Size(137, 22)
-        Me.lblPublisherPhone.TabIndex = 7
-        Me.lblPublisherPhone.Text = "Phone Number:"
-        Me.lblPublisherPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblPublisherFax
-        '
-        Me.lblPublisherFax.AutoSize = True
-        Me.lblPublisherFax.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherFax.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherFax.Location = New System.Drawing.Point(66, 358)
-        Me.lblPublisherFax.Name = "lblPublisherFax"
-        Me.lblPublisherFax.Size = New System.Drawing.Size(115, 22)
-        Me.lblPublisherFax.TabIndex = 8
-        Me.lblPublisherFax.Text = "Fax Number:"
-        Me.lblPublisherFax.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblPublisherFaxOut
         '
@@ -352,18 +273,252 @@ Partial Class FormPublisherDisplay
         Me.lblPublisherIDOut.Text = "8888888888"
         Me.lblPublisherIDOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'mnuExit
+        'lblPublisherFax
         '
-        Me.mnuExit.Name = "mnuExit"
-        Me.mnuExit.Size = New System.Drawing.Size(180, 22)
-        Me.mnuExit.Text = "E&xit"
+        Me.lblPublisherFax.AutoSize = True
+        Me.lblPublisherFax.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherFax.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherFax.Location = New System.Drawing.Point(66, 358)
+        Me.lblPublisherFax.Name = "lblPublisherFax"
+        Me.lblPublisherFax.Size = New System.Drawing.Size(115, 22)
+        Me.lblPublisherFax.TabIndex = 8
+        Me.lblPublisherFax.Text = "Fax Number:"
+        Me.lblPublisherFax.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPublisherPhone
+        '
+        Me.lblPublisherPhone.AutoSize = True
+        Me.lblPublisherPhone.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherPhone.Location = New System.Drawing.Point(44, 318)
+        Me.lblPublisherPhone.Name = "lblPublisherPhone"
+        Me.lblPublisherPhone.Size = New System.Drawing.Size(137, 22)
+        Me.lblPublisherPhone.TabIndex = 7
+        Me.lblPublisherPhone.Text = "Phone Number:"
+        Me.lblPublisherPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPublisherZip
+        '
+        Me.lblPublisherZip.AutoSize = True
+        Me.lblPublisherZip.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherZip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherZip.Location = New System.Drawing.Point(139, 278)
+        Me.lblPublisherZip.Name = "lblPublisherZip"
+        Me.lblPublisherZip.Size = New System.Drawing.Size(42, 22)
+        Me.lblPublisherZip.TabIndex = 6
+        Me.lblPublisherZip.Text = "Zip:"
+        Me.lblPublisherZip.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPublisherState
+        '
+        Me.lblPublisherState.AutoSize = True
+        Me.lblPublisherState.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherState.Location = New System.Drawing.Point(122, 238)
+        Me.lblPublisherState.Name = "lblPublisherState"
+        Me.lblPublisherState.Size = New System.Drawing.Size(59, 22)
+        Me.lblPublisherState.TabIndex = 5
+        Me.lblPublisherState.Text = "State: "
+        Me.lblPublisherState.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPublisherCity
+        '
+        Me.lblPublisherCity.AutoSize = True
+        Me.lblPublisherCity.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherCity.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherCity.Location = New System.Drawing.Point(130, 198)
+        Me.lblPublisherCity.Name = "lblPublisherCity"
+        Me.lblPublisherCity.Size = New System.Drawing.Size(51, 22)
+        Me.lblPublisherCity.TabIndex = 4
+        Me.lblPublisherCity.Text = "City: "
+        Me.lblPublisherCity.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPublisherAddress
+        '
+        Me.lblPublisherAddress.AutoSize = True
+        Me.lblPublisherAddress.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherAddress.Location = New System.Drawing.Point(101, 158)
+        Me.lblPublisherAddress.Name = "lblPublisherAddress"
+        Me.lblPublisherAddress.Size = New System.Drawing.Size(80, 22)
+        Me.lblPublisherAddress.TabIndex = 3
+        Me.lblPublisherAddress.Text = "Address:"
+        Me.lblPublisherAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblCompanyName
+        '
+        Me.lblCompanyName.AutoSize = True
+        Me.lblCompanyName.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCompanyName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblCompanyName.Location = New System.Drawing.Point(37, 118)
+        Me.lblCompanyName.Name = "lblCompanyName"
+        Me.lblCompanyName.Size = New System.Drawing.Size(144, 22)
+        Me.lblCompanyName.TabIndex = 2
+        Me.lblCompanyName.Text = "Company Name:"
+        Me.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPublisherName
+        '
+        Me.lblPublisherName.AutoSize = True
+        Me.lblPublisherName.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherName.Location = New System.Drawing.Point(35, 78)
+        Me.lblPublisherName.Name = "lblPublisherName"
+        Me.lblPublisherName.Size = New System.Drawing.Size(146, 22)
+        Me.lblPublisherName.TabIndex = 1
+        Me.lblPublisherName.Text = "Publisher Name:"
+        Me.lblPublisherName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPublisherID
+        '
+        Me.lblPublisherID.AutoSize = True
+        Me.lblPublisherID.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPublisherID.Location = New System.Drawing.Point(65, 38)
+        Me.lblPublisherID.Name = "lblPublisherID"
+        Me.lblPublisherID.Size = New System.Drawing.Size(116, 22)
+        Me.lblPublisherID.TabIndex = 0
+        Me.lblPublisherID.Text = "Publisher ID:"
+        Me.lblPublisherID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'ContactsDataSet
+        '
+        Me.ContactsDataSet.DataSetName = "ContactsDataSet"
+        Me.ContactsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PublishersBindingSource
+        '
+        Me.PublishersBindingSource.DataMember = "Publishers"
+        Me.PublishersBindingSource.DataSource = Me.ContactsDataSet
+        '
+        'PublishersTableAdapter
+        '
+        Me.PublishersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.PublishersTableAdapter = Me.PublishersTableAdapter
+        Me.TableAdapterManager.UpdateOrder = Publisher.ContactsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'PublishersBindingNavigator
+        '
+        Me.PublishersBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.PublishersBindingNavigator.BindingSource = Me.PublishersBindingSource
+        Me.PublishersBindingNavigator.CountItem = Me.BindingNavigatorCountItem
+        Me.PublishersBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.PublishersBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.PublishersBindingNavigatorSaveItem})
+        Me.PublishersBindingNavigator.Location = New System.Drawing.Point(0, 26)
+        Me.PublishersBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.PublishersBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.PublishersBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.PublishersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.PublishersBindingNavigator.Name = "PublishersBindingNavigator"
+        Me.PublishersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
+        Me.PublishersBindingNavigator.Size = New System.Drawing.Size(816, 25)
+        Me.PublishersBindingNavigator.TabIndex = 4
+        Me.PublishersBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
+        '
+        'BindingNavigatorSeparator
+        '
+        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorPositionItem
+        '
+        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 15)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorSeparator1
+        '
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
+        '
+        'BindingNavigatorSeparator2
+        '
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
+        'PublishersBindingNavigatorSaveItem
+        '
+        Me.PublishersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.PublishersBindingNavigatorSaveItem.Image = CType(resources.GetObject("PublishersBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.PublishersBindingNavigatorSaveItem.Name = "PublishersBindingNavigatorSaveItem"
+        Me.PublishersBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.PublishersBindingNavigatorSaveItem.Text = "Save Data"
         '
         'FormPublisherDisplay
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(816, 566)
+        Me.ClientSize = New System.Drawing.Size(816, 570)
+        Me.Controls.Add(Me.PublishersBindingNavigator)
         Me.Controls.Add(Me.grpPublisherInfo)
         Me.Controls.Add(Me.cboPublisher)
         Me.Controls.Add(Me.lblSelectPublisher)
@@ -377,6 +532,11 @@ Partial Class FormPublisherDisplay
         Me.mnuPublisherViewer.PerformLayout()
         Me.grpPublisherInfo.ResumeLayout(False)
         Me.grpPublisherInfo.PerformLayout()
+        CType(Me.ContactsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PublishersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PublishersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PublishersBindingNavigator.ResumeLayout(False)
+        Me.PublishersBindingNavigator.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -408,4 +568,21 @@ Partial Class FormPublisherDisplay
     Friend WithEvents lblPublisherNameOut As Label
     Friend WithEvents lblPublisherIDOut As Label
     Friend WithEvents mnuExit As ToolStripMenuItem
+    Friend WithEvents ContactsDataSet As ContactsDataSet
+    Friend WithEvents PublishersBindingSource As BindingSource
+    Friend WithEvents PublishersTableAdapter As ContactsDataSetTableAdapters.PublishersTableAdapter
+    Friend WithEvents TableAdapterManager As ContactsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents PublishersBindingNavigator As BindingNavigator
+    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
+    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
+    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
+    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
+    Friend WithEvents PublishersBindingNavigatorSaveItem As ToolStripButton
 End Class

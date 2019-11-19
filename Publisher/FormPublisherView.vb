@@ -19,4 +19,17 @@ Public Class FormPublisherDisplay
     Private Sub mnuExit_Click(sender As Object, e As EventArgs) Handles mnuExit.Click
         Me.Close()
     End Sub
+
+    Private Sub PublishersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles PublishersBindingNavigatorSaveItem.Click
+        Me.Validate()
+        Me.PublishersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.ContactsDataSet)
+
+    End Sub
+
+    Private Sub FormPublisherDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'ContactsDataSet.Publishers' table. You can move, or remove it, as needed.
+        Me.PublishersTableAdapter.Fill(Me.ContactsDataSet.Publishers)
+
+    End Sub
 End Class
