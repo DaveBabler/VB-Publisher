@@ -79,6 +79,11 @@
     <Compile Include="AboutBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContactsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormPublisherView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +123,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ContactsDataSet.xsc">
+      <DependentUpon>ContactsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ContactsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContactsDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContactsDataSet.xss">
+      <DependentUpon>ContactsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
