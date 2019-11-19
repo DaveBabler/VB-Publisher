@@ -20,7 +20,7 @@ Public Class FormPublisherDisplay
         Me.Close()
     End Sub
 
-    Private Sub PublishersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles PublishersBindingNavigatorSaveItem.Click
+    Private Sub PublishersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) 
         Me.Validate()
         Me.PublishersBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ContactsDataSet)
