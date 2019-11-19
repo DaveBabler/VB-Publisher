@@ -20,7 +20,7 @@ Public Class FormPublisherDisplay
         Me.Close()
     End Sub
 
-    Private Sub PublishersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) 
+    Private Sub PublishersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.PublishersBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ContactsDataSet)
@@ -30,6 +30,12 @@ Public Class FormPublisherDisplay
     Private Sub FormPublisherDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'ContactsDataSet.Publishers' table. You can move, or remove it, as needed.
         Me.PublishersTableAdapter.Fill(Me.ContactsDataSet.Publishers)
+        Console.WriteLine(Me.ContactsDataSet.Tables.ToString)
+        Dim dv As DataView = ContactsDataSet.Tables("Publishers").DefaultView
+
+        cboPublisher.DataSource = dv
+        cboPublisher.DisplayMember = "Name"
+        cboPublisher.ValueMember = "PubID"
 
     End Sub
 End Class
