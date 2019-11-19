@@ -42,6 +42,7 @@ Public Class FormPublisherDisplay
         cboPublisher.DisplayMember = "Name"
         cboPublisher.ValueMember = "PubID"
 
+
         'This shows the data from the data set
         'For Each thisTable In Me.ContactsDataSet.Tables
 
@@ -151,7 +152,11 @@ Public Class FormPublisherDisplay
         Console.WriteLine(rowAsString)
 
 
+        dv.RowFilter = "PubID = 1"
 
+        Dim dvSortRow As IEnumerable(Of DataRow) = dv.Cast(Of DataRowView)().Take(8).[Select](Function(r) r.Row)
+        Dim stringerRow = String.Join(", ", dvSortRow.Select(Function(f) f(2).ToString()).ToArray())  'This definately gets a value out 
+        Console.WriteLine(stringerRow)
 
     End Sub
     Private Sub PrintTableOrView(ByVal view As DataView, ByVal label As String)
@@ -168,5 +173,6 @@ Public Class FormPublisherDisplay
     'https://docs.microsoft.com/en-us/dotnet/api/system.data.dataview.totable?redirectedfrom=MSDN&view=netframework-4.8#System_Data_DataView_ToTable_System_Boolean_System_String___
     'https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/filtering-with-dataview-linq-to-dataset
     'https://forums.asp.net/t/2097404.aspx?DataView+filter+and+returning+a+string+array
+    'https://stackoverflow.com/questions/19660082/gettin-the-all-the-column-values-of-datagridview-in-vb-net-in-variables-on-enter
 
 End Class
