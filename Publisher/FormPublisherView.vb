@@ -37,5 +37,16 @@ Public Class FormPublisherDisplay
         cboPublisher.DisplayMember = "Name"
         cboPublisher.ValueMember = "PubID"
 
+        'This shows the data from the data set
+        For Each thisTable In Me.ContactsDataSet.Tables
+            ' For each row, print the values of each column.
+            Dim row As DataRow
+            For Each row In thisTable.Rows
+                Dim column As DataColumn
+                For Each column In thisTable.Columns
+                    Console.WriteLine(row(column))
+                Next column
+            Next row
+        Next thisTable
     End Sub
 End Class
