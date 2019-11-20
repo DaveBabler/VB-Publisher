@@ -19,4 +19,14 @@ Public Class FormPublisherDisplay
     Private Sub mnuExit_Click(sender As Object, e As EventArgs) Handles mnuExit.Click
         Me.Close()
     End Sub
+
+    Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestToolStripMenuItem.Click
+        'This is for testing and will be removed
+
+    End Sub
+
+    Private Sub FormPublisherDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'This will be where a try/catch block will go to catch data 
+
+    End Sub
 End Class
