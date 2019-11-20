@@ -22,7 +22,8 @@ Public Class FormPublisherDisplay
 
     Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestToolStripMenuItem.Click
         'This is for testing and will be removed
-
+        Dim testSQL = SQLCalls.BuildUnSecureSQLString(1, "Publishers", GlobalClass.dbstrPublisher_Columns, "PubID")
+        Console.WriteLine(testSQL)
     End Sub
 
     Private Sub FormPublisherDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
