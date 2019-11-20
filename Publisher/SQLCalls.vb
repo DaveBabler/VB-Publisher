@@ -11,17 +11,17 @@
         Dim strSelect As String = "SELECT "
         Dim intLastCol As Integer = strColumnList.Count - 1
         Dim strFrom As String = "FROM " & strTable
-        Dim strWhere As String = "WHERE " & strKeyColName & " = " & intKeyValue.ToString()
+        Dim strWhere As String = "WHERE " & SQLCalls.AddBrackets(strKeyColName) & " = " & intKeyValue.ToString()
 
 
 
         For i = 0 To strColumnList.Count - 1
-            'WARNING!!!! WE MAY NEED TO ADD BRACKETS AROUND EACH COLUMN NAME
+            'WARNING!!!! column names must be in brackets if there are spaces   
             If i = intLastCol Then
                 'No comma at the very end of the list
-                strSelectedColumns = strSelectedColumns & strColumnList(i) & " "
+                strSelectedColumns = strSelectedColumns & SQLCalls.AddBrackets(strColumnList(i)) & " "
             Else
-                strSelectedColumns = strSelectedColumns & strColumnList(i) & ", "
+                strSelectedColumns = strSelectedColumns & SQLCalls.AddBrackets(strColumnList(i)) & ", "
             End If
 
         Next i
@@ -34,8 +34,8 @@
     End Function
 
 
-    Public Shared Sub QuickTest(ByVal intKeyID As Integer)
-        Dim strSQL As String = "SELECT * FROM Publishers WHERE PubID = " & intKeyID.ToString()
+    Public Shared Sub QuickTest(ByVal intKeyID As Integer, strSQL As String)
+        'Dim strSQL As String = "SELECT * FROM Publishers WHERE PubID = " & intKeyID.ToString()
         Dim odaPubs As New OleDb.OleDbDataAdapter(strSQL, OLE_DB_CON_PUBLISHERS)
         Dim datRow As New DataTable
         odaPubs.Fill(datRow)
@@ -49,5 +49,11 @@
 
 
     End Sub
+    Public Shared Function AddBrackets(strIncString As String) As String
+        Dim strWithBrackets As String
+        strWithBrackets = "[" & strIncString & "]"
+        Return strWithBrackets
+
+    End Function
 
 End Class
