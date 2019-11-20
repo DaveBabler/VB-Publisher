@@ -11,7 +11,7 @@
         Dim strSelect As String = "SELECT "
         Dim intLastCol As Integer = strColumnList.Count - 1
         Dim strFrom As String = "FROM " & strTable
-        Dim strWhere As String = "WHERE " & strKeyColName & " = " & intKeyValue
+        Dim strWhere As String = "WHERE " & strKeyColName & " = " & intKeyValue.ToString()
 
 
 
@@ -32,5 +32,22 @@
             & strWhere
         Return strSQLOut
     End Function
+
+
+    Public Shared Sub QuickTest(ByVal intKeyID As Integer)
+        Dim strSQL As String = "SELECT * FROM Publishers WHERE PubID = " & intKeyID.ToString()
+        Dim odaPubs As New OleDb.OleDbDataAdapter(strSQL, OLE_DB_CON_PUBLISHERS)
+        Dim datRow As New DataTable
+        odaPubs.Fill(datRow)
+
+        odaPubs.Dispose()
+
+        For Each col In GlobalClass.dbstrPublisher_Columns
+            Console.WriteLine(datRow.Rows(0)(col).ToString())
+        Next
+
+
+
+    End Sub
 
 End Class
