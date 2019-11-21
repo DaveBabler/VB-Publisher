@@ -34,7 +34,19 @@
 
     End Sub
 
+    Public Shared Sub PopulateComboBox(ByVal datFromDb As DataTable, ByRef cboBoxToPopulate As ComboBox, strAttributeKey As String, strAttributeDisplay As String)
+        'Clears then populates a combo box!
+        cboBoxToPopulate.Text = ""
+        cboBoxToPopulate.Items.Clear()
 
+        For i = 0 To datFromDb.Rows.Count
+
+            cboBoxToPopulate.ValueMember = strAttributeDisplay
+            cboBoxToPopulate.DisplayMember = strAttributeDisplay
+        Next i
+
+
+    End Sub
 
 
 

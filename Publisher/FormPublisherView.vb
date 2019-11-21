@@ -12,6 +12,7 @@
 '                         Allow the user To Select the publisher name from a sorted drop-down list; display the rest Of the fields In labels.
 
 Public Class FormPublisherDisplay
+    Friend datComboBox As DataTable
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         AboutBox.ShowDialog()
     End Sub
@@ -35,6 +36,11 @@ Public Class FormPublisherDisplay
         'This will be where a try/catch block will go to catch data 
         'Hey the try catch is in a sub!
         SQLCalls.TestConnection()
+        'Get a datatable 
+        datComboBox = SQLCalls.DataTableForComboBox(SQLCalls.SELECT_FOR_CBO)
+        'fill the combo box
+        GlobalClass.PopulateComboBox(datComboBox, cboPublisher, "PubID", "Name")
+
 
     End Sub
 

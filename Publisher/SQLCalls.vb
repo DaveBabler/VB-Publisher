@@ -8,6 +8,7 @@
     'will probably need to create variables for colums and datatypes
 
     Protected Const OLE_DB_CON_PUBLISHERS As String = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=""C:\Users\dabab\OneDrive\HCC Current\COP-1332-27779 Visual Basic Beginning\Assignements\10 - Publisher\Contacts.mdb"""
+    Public Const SELECT_FOR_CBO As String = "Select PubID, Name FROM Publishers "
     Public Shared Sub TestConnection()
         'This sub is only for testing the connection to the database upon program load
         Dim strSQL As String = "SELECT TOP 1 PubID FROM Publishers"
@@ -26,6 +27,9 @@
         End Try
 
     End Sub
+
+
+
     Public Shared Function BuildUnSecureSQLString(ByVal intKeyValue As Integer, ByVal strTable As String, ByRef strColumnList As String(), strKeyColName As String) As String
         Dim strSelectedColumns As String = ""
         Dim strSQLOut As String = ""
@@ -133,7 +137,15 @@
 
     End Function
 
+    Public Shared Function DataTableForComboBox(strSQL As String) As DataTable
+        'I should probably use my SQL calls that I made for this to get this done but I am up against a deadline.
+        Dim odaDTCombo As New OleDb.OleDbDataAdapter(strSQL, OLE_DB_CON_PUBLISHERS)
+        Dim datTableOut As New DataTable
+        odaDTCombo.Fill(datTableOut)
+        odaDTCombo.Dispose()
+        Return datTableOut
 
+    End Function
 
     'https://docs.microsoft.com/en-us/dotnet/api/system.data.oledb.oledbdatareader?view=netframework-4.8
 End Class
