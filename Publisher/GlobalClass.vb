@@ -41,7 +41,7 @@
 
         For i = 0 To datFromDb.Rows.Count
 
-            cboBoxToPopulate.ValueMember = strAttributeDisplay
+            cboBoxToPopulate.ValueMember = strAttributeKey
             cboBoxToPopulate.DisplayMember = strAttributeDisplay
         Next i
 

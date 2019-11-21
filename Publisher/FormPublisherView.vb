@@ -49,13 +49,30 @@ Public Class FormPublisherDisplay
         cboPublisher.ValueMember = "PubID"
         cboPublisher.DisplayMember = "Name"
         adapter.Dispose()
-
+        cboPublisher.SelectedIndex = 0
 
 
     End Sub
 
     Private Sub lblCompanyNameOut_Click(sender As Object, e As EventArgs) Handles lblCompanyNameOut.Click
 
+    End Sub
+
+    Private Sub cboPublisher_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPublisher.SelectedIndexChanged
+        Dim intMyInteger As Integer
+        If TypeOf cboPublisher.SelectedValue Is Integer Then
+            intMyInteger = DirectCast(cboPublisher.SelectedValue, Integer)
+        End If
+
+
+
+        MsgBox("ProgramID: " & DirectCast(cboPublisher.SelectedItem, System.Data.DataRowView).Row.ItemArray(0).ToString())
+        Dim intCurrentIndex As Integer = intMyInteger
+        Dim strKeyCol As String = "PubID"
+        Dim strSQLSelect As String
+
+        strSQLSelect = SQLCalls.ParamaterizedSQLCall("Publishers", GlobalClass.dbstrPublisher_Columns, strKeyCol)
+        SQLCalls.MSAccessParamaterizedSelect(strSQLSelect, intCurrentIndex)
     End Sub
 End Class
 'http://1bestcsharp.blogspot.com/2017/11/vb.net-display-mysql-data-depending-on-combobox-value.html
