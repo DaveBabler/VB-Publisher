@@ -27,6 +27,7 @@ Partial Class FormPublisherDisplay
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblSelectPublisher = New System.Windows.Forms.Label()
         Me.cboPublisher = New System.Windows.Forms.ComboBox()
         Me.grpPublisherInfo = New System.Windows.Forms.GroupBox()
@@ -48,7 +49,6 @@ Partial Class FormPublisherDisplay
         Me.lblCompanyName = New System.Windows.Forms.Label()
         Me.lblPublisherName = New System.Windows.Forms.Label()
         Me.lblPublisherID = New System.Windows.Forms.Label()
-        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuPublisherViewer.SuspendLayout()
         Me.grpPublisherInfo.SuspendLayout()
         Me.SuspendLayout()
@@ -56,11 +56,11 @@ Partial Class FormPublisherDisplay
         'mnuPublisherViewer
         '
         Me.mnuPublisherViewer.BackColor = System.Drawing.Color.Gainsboro
-        Me.mnuPublisherViewer.Font = New System.Drawing.Font("Noto Serif", 9.749999!, System.Drawing.FontStyle.Bold)
+        Me.mnuPublisherViewer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold)
         Me.mnuPublisherViewer.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem, Me.TestToolStripMenuItem})
         Me.mnuPublisherViewer.Location = New System.Drawing.Point(0, 0)
         Me.mnuPublisherViewer.Name = "mnuPublisherViewer"
-        Me.mnuPublisherViewer.Size = New System.Drawing.Size(816, 26)
+        Me.mnuPublisherViewer.Size = New System.Drawing.Size(816, 24)
         Me.mnuPublisherViewer.TabIndex = 0
         Me.mnuPublisherViewer.Text = "MenuStrip1"
         '
@@ -69,13 +69,13 @@ Partial Class FormPublisherDisplay
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuExit})
         Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(45, 22)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
         Me.FileToolStripMenuItem.Text = "&File"
         '
         'mnuExit
         '
         Me.mnuExit.Name = "mnuExit"
-        Me.mnuExit.Size = New System.Drawing.Size(102, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(101, 22)
         Me.mnuExit.Text = "E&xit"
         '
         'HelpToolStripMenuItem
@@ -83,7 +83,7 @@ Partial Class FormPublisherDisplay
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(51, 22)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
         Me.HelpToolStripMenuItem.Text = "&Help"
         '
         'AboutToolStripMenuItem
@@ -92,26 +92,32 @@ Partial Class FormPublisherDisplay
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.AboutToolStripMenuItem.Text = "&About"
         '
+        'TestToolStripMenuItem
+        '
+        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
+        Me.TestToolStripMenuItem.Text = "Test"
+        '
         'lblSelectPublisher
         '
         Me.lblSelectPublisher.AutoSize = True
-        Me.lblSelectPublisher.Font = New System.Drawing.Font("Noto Serif", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.lblSelectPublisher.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold)
         Me.lblSelectPublisher.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.lblSelectPublisher.Location = New System.Drawing.Point(65, 50)
         Me.lblSelectPublisher.Name = "lblSelectPublisher"
-        Me.lblSelectPublisher.Size = New System.Drawing.Size(252, 26)
+        Me.lblSelectPublisher.Size = New System.Drawing.Size(243, 24)
         Me.lblSelectPublisher.TabIndex = 1
         Me.lblSelectPublisher.Text = "Select Publisher to View:"
         '
         'cboPublisher
         '
         Me.cboPublisher.BackColor = System.Drawing.Color.DarkGray
-        Me.cboPublisher.Font = New System.Drawing.Font("Noto Serif Cond", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.cboPublisher.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold)
         Me.cboPublisher.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.cboPublisher.FormattingEnabled = True
         Me.cboPublisher.Location = New System.Drawing.Point(359, 46)
         Me.cboPublisher.Name = "cboPublisher"
-        Me.cboPublisher.Size = New System.Drawing.Size(392, 34)
+        Me.cboPublisher.Size = New System.Drawing.Size(392, 32)
         Me.cboPublisher.TabIndex = 2
         '
         'grpPublisherInfo
@@ -134,7 +140,7 @@ Partial Class FormPublisherDisplay
         Me.grpPublisherInfo.Controls.Add(Me.lblCompanyName)
         Me.grpPublisherInfo.Controls.Add(Me.lblPublisherName)
         Me.grpPublisherInfo.Controls.Add(Me.lblPublisherID)
-        Me.grpPublisherInfo.Font = New System.Drawing.Font("Noto Serif Light", 9.749999!)
+        Me.grpPublisherInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!)
         Me.grpPublisherInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.grpPublisherInfo.Location = New System.Drawing.Point(64, 108)
         Me.grpPublisherInfo.Name = "grpPublisherInfo"
@@ -146,11 +152,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherFaxOut
         '
         Me.lblPublisherFaxOut.AutoSize = True
-        Me.lblPublisherFaxOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherFaxOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherFaxOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherFaxOut.Location = New System.Drawing.Point(193, 358)
         Me.lblPublisherFaxOut.Name = "lblPublisherFaxOut"
-        Me.lblPublisherFaxOut.Size = New System.Drawing.Size(98, 22)
+        Me.lblPublisherFaxOut.Size = New System.Drawing.Size(121, 20)
         Me.lblPublisherFaxOut.TabIndex = 17
         Me.lblPublisherFaxOut.Text = "123-456-7890"
         Me.lblPublisherFaxOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -158,11 +164,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherPhoneOut
         '
         Me.lblPublisherPhoneOut.AutoSize = True
-        Me.lblPublisherPhoneOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherPhoneOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherPhoneOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherPhoneOut.Location = New System.Drawing.Point(193, 318)
         Me.lblPublisherPhoneOut.Name = "lblPublisherPhoneOut"
-        Me.lblPublisherPhoneOut.Size = New System.Drawing.Size(98, 22)
+        Me.lblPublisherPhoneOut.Size = New System.Drawing.Size(121, 20)
         Me.lblPublisherPhoneOut.TabIndex = 16
         Me.lblPublisherPhoneOut.Text = "123-456-7890"
         Me.lblPublisherPhoneOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -170,11 +176,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherZipOut
         '
         Me.lblPublisherZipOut.AutoSize = True
-        Me.lblPublisherZipOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherZipOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherZipOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherZipOut.Location = New System.Drawing.Point(193, 278)
         Me.lblPublisherZipOut.Name = "lblPublisherZipOut"
-        Me.lblPublisherZipOut.Size = New System.Drawing.Size(86, 22)
+        Me.lblPublisherZipOut.Size = New System.Drawing.Size(105, 20)
         Me.lblPublisherZipOut.TabIndex = 15
         Me.lblPublisherZipOut.Text = "12345-1234"
         Me.lblPublisherZipOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -182,11 +188,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherStateOut
         '
         Me.lblPublisherStateOut.AutoSize = True
-        Me.lblPublisherStateOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherStateOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherStateOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherStateOut.Location = New System.Drawing.Point(193, 238)
         Me.lblPublisherStateOut.Name = "lblPublisherStateOut"
-        Me.lblPublisherStateOut.Size = New System.Drawing.Size(30, 22)
+        Me.lblPublisherStateOut.Size = New System.Drawing.Size(33, 20)
         Me.lblPublisherStateOut.TabIndex = 14
         Me.lblPublisherStateOut.Text = "XX"
         Me.lblPublisherStateOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -194,11 +200,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherCityOut
         '
         Me.lblPublisherCityOut.AutoSize = True
-        Me.lblPublisherCityOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherCityOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherCityOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherCityOut.Location = New System.Drawing.Point(193, 198)
         Me.lblPublisherCityOut.Name = "lblPublisherCityOut"
-        Me.lblPublisherCityOut.Size = New System.Drawing.Size(118, 22)
+        Me.lblPublisherCityOut.Size = New System.Drawing.Size(128, 20)
         Me.lblPublisherCityOut.TabIndex = 13
         Me.lblPublisherCityOut.Text = "Probably a City"
         Me.lblPublisherCityOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -206,11 +212,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherAddressOut
         '
         Me.lblPublisherAddressOut.AutoSize = True
-        Me.lblPublisherAddressOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherAddressOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherAddressOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherAddressOut.Location = New System.Drawing.Point(193, 158)
         Me.lblPublisherAddressOut.Name = "lblPublisherAddressOut"
-        Me.lblPublisherAddressOut.Size = New System.Drawing.Size(194, 22)
+        Me.lblPublisherAddressOut.Size = New System.Drawing.Size(230, 20)
         Me.lblPublisherAddressOut.TabIndex = 12
         Me.lblPublisherAddressOut.Text = "12345 SomeStreet Ave #45"
         Me.lblPublisherAddressOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -218,11 +224,11 @@ Partial Class FormPublisherDisplay
         'lblCompanyNameOut
         '
         Me.lblCompanyNameOut.AutoSize = True
-        Me.lblCompanyNameOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCompanyNameOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblCompanyNameOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblCompanyNameOut.Location = New System.Drawing.Point(193, 118)
         Me.lblCompanyNameOut.Name = "lblCompanyNameOut"
-        Me.lblCompanyNameOut.Size = New System.Drawing.Size(94, 22)
+        Me.lblCompanyNameOut.Size = New System.Drawing.Size(106, 20)
         Me.lblCompanyNameOut.TabIndex = 11
         Me.lblCompanyNameOut.Text = "Some Name"
         Me.lblCompanyNameOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -230,11 +236,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherNameOut
         '
         Me.lblPublisherNameOut.AutoSize = True
-        Me.lblPublisherNameOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherNameOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherNameOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherNameOut.Location = New System.Drawing.Point(193, 78)
         Me.lblPublisherNameOut.Name = "lblPublisherNameOut"
-        Me.lblPublisherNameOut.Size = New System.Drawing.Size(204, 22)
+        Me.lblPublisherNameOut.Size = New System.Drawing.Size(228, 20)
         Me.lblPublisherNameOut.TabIndex = 10
         Me.lblPublisherNameOut.Text = "A Publisher, one presumes."
         Me.lblPublisherNameOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -242,11 +248,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherIDOut
         '
         Me.lblPublisherIDOut.AutoSize = True
-        Me.lblPublisherIDOut.Font = New System.Drawing.Font("Noto Serif Cond", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherIDOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherIDOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherIDOut.Location = New System.Drawing.Point(193, 38)
         Me.lblPublisherIDOut.Name = "lblPublisherIDOut"
-        Me.lblPublisherIDOut.Size = New System.Drawing.Size(90, 22)
+        Me.lblPublisherIDOut.Size = New System.Drawing.Size(109, 20)
         Me.lblPublisherIDOut.TabIndex = 9
         Me.lblPublisherIDOut.Text = "8888888888"
         Me.lblPublisherIDOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -254,11 +260,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherFax
         '
         Me.lblPublisherFax.AutoSize = True
-        Me.lblPublisherFax.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherFax.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherFax.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherFax.Location = New System.Drawing.Point(66, 358)
         Me.lblPublisherFax.Name = "lblPublisherFax"
-        Me.lblPublisherFax.Size = New System.Drawing.Size(115, 22)
+        Me.lblPublisherFax.Size = New System.Drawing.Size(110, 20)
         Me.lblPublisherFax.TabIndex = 8
         Me.lblPublisherFax.Text = "Fax Number:"
         Me.lblPublisherFax.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -266,11 +272,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherPhone
         '
         Me.lblPublisherPhone.AutoSize = True
-        Me.lblPublisherPhone.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherPhone.Location = New System.Drawing.Point(44, 318)
         Me.lblPublisherPhone.Name = "lblPublisherPhone"
-        Me.lblPublisherPhone.Size = New System.Drawing.Size(137, 22)
+        Me.lblPublisherPhone.Size = New System.Drawing.Size(132, 20)
         Me.lblPublisherPhone.TabIndex = 7
         Me.lblPublisherPhone.Text = "Phone Number:"
         Me.lblPublisherPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -278,11 +284,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherZip
         '
         Me.lblPublisherZip.AutoSize = True
-        Me.lblPublisherZip.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherZip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherZip.Location = New System.Drawing.Point(139, 278)
         Me.lblPublisherZip.Name = "lblPublisherZip"
-        Me.lblPublisherZip.Size = New System.Drawing.Size(42, 22)
+        Me.lblPublisherZip.Size = New System.Drawing.Size(39, 20)
         Me.lblPublisherZip.TabIndex = 6
         Me.lblPublisherZip.Text = "Zip:"
         Me.lblPublisherZip.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -290,11 +296,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherState
         '
         Me.lblPublisherState.AutoSize = True
-        Me.lblPublisherState.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherState.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherState.Location = New System.Drawing.Point(122, 238)
         Me.lblPublisherState.Name = "lblPublisherState"
-        Me.lblPublisherState.Size = New System.Drawing.Size(59, 22)
+        Me.lblPublisherState.Size = New System.Drawing.Size(63, 20)
         Me.lblPublisherState.TabIndex = 5
         Me.lblPublisherState.Text = "State: "
         Me.lblPublisherState.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -302,11 +308,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherCity
         '
         Me.lblPublisherCity.AutoSize = True
-        Me.lblPublisherCity.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherCity.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherCity.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherCity.Location = New System.Drawing.Point(130, 198)
         Me.lblPublisherCity.Name = "lblPublisherCity"
-        Me.lblPublisherCity.Size = New System.Drawing.Size(51, 22)
+        Me.lblPublisherCity.Size = New System.Drawing.Size(49, 20)
         Me.lblPublisherCity.TabIndex = 4
         Me.lblPublisherCity.Text = "City: "
         Me.lblPublisherCity.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -314,11 +320,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherAddress
         '
         Me.lblPublisherAddress.AutoSize = True
-        Me.lblPublisherAddress.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherAddress.Location = New System.Drawing.Point(101, 158)
         Me.lblPublisherAddress.Name = "lblPublisherAddress"
-        Me.lblPublisherAddress.Size = New System.Drawing.Size(80, 22)
+        Me.lblPublisherAddress.Size = New System.Drawing.Size(80, 20)
         Me.lblPublisherAddress.TabIndex = 3
         Me.lblPublisherAddress.Text = "Address:"
         Me.lblPublisherAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -326,11 +332,11 @@ Partial Class FormPublisherDisplay
         'lblCompanyName
         '
         Me.lblCompanyName.AutoSize = True
-        Me.lblCompanyName.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCompanyName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblCompanyName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblCompanyName.Location = New System.Drawing.Point(37, 118)
         Me.lblCompanyName.Name = "lblCompanyName"
-        Me.lblCompanyName.Size = New System.Drawing.Size(144, 22)
+        Me.lblCompanyName.Size = New System.Drawing.Size(139, 20)
         Me.lblCompanyName.TabIndex = 2
         Me.lblCompanyName.Text = "Company Name:"
         Me.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -338,11 +344,11 @@ Partial Class FormPublisherDisplay
         'lblPublisherName
         '
         Me.lblPublisherName.AutoSize = True
-        Me.lblPublisherName.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherName.Location = New System.Drawing.Point(35, 78)
         Me.lblPublisherName.Name = "lblPublisherName"
-        Me.lblPublisherName.Size = New System.Drawing.Size(146, 22)
+        Me.lblPublisherName.Size = New System.Drawing.Size(139, 20)
         Me.lblPublisherName.TabIndex = 1
         Me.lblPublisherName.Text = "Publisher Name:"
         Me.lblPublisherName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -350,24 +356,18 @@ Partial Class FormPublisherDisplay
         'lblPublisherID
         '
         Me.lblPublisherID.AutoSize = True
-        Me.lblPublisherID.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPublisherID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblPublisherID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lblPublisherID.Location = New System.Drawing.Point(65, 38)
         Me.lblPublisherID.Name = "lblPublisherID"
-        Me.lblPublisherID.Size = New System.Drawing.Size(116, 22)
+        Me.lblPublisherID.Size = New System.Drawing.Size(112, 20)
         Me.lblPublisherID.TabIndex = 0
         Me.lblPublisherID.Text = "Publisher ID:"
         Me.lblPublisherID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TestToolStripMenuItem
-        '
-        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(46, 22)
-        Me.TestToolStripMenuItem.Text = "Test"
-        '
         'FormPublisherDisplay
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(816, 566)
@@ -375,7 +375,7 @@ Partial Class FormPublisherDisplay
         Me.Controls.Add(Me.cboPublisher)
         Me.Controls.Add(Me.lblSelectPublisher)
         Me.Controls.Add(Me.mnuPublisherViewer)
-        Me.Font = New System.Drawing.Font("Noto Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MainMenuStrip = Me.mnuPublisherViewer
         Me.Name = "FormPublisherDisplay"

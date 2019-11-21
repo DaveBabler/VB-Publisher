@@ -8,7 +8,24 @@
     'will probably need to create variables for colums and datatypes
 
     Protected Const OLE_DB_CON_PUBLISHERS As String = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=""C:\Users\dabab\OneDrive\HCC Current\COP-1332-27779 Visual Basic Beginning\Assignements\10 - Publisher\Contacts.mdb"""
+    Public Shared Sub TestConnection()
+        'This sub is only for testing the connection to the database upon program load
+        Dim strSQL As String = "SELECT TOP 1 PubID FROM Publishers"
+        Dim odaTest As New OleDb.OleDbDataAdapter(strSQL, OLE_DB_CON_PUBLISHERS)
+        Dim datTestConTable As New DataTable
 
+
+        Try
+            odaTest.Fill(datTestConTable)
+        Catch ex As Exception
+            MsgBox("Problem, Publisher database is not accessible. Verify it is in: " &
+                   Environment.NewLine &
+                   "C:\Users\dabab\OneDrive\HCC Current\COP-1332-27779 Visual Basic Beginning\Assignements\10 - Publisher\Contacts.mdb",
+                    vbExclamation Or MsgBoxStyle.OkOnly, "Where's my database?")
+
+        End Try
+
+    End Sub
     Public Shared Function BuildUnSecureSQLString(ByVal intKeyValue As Integer, ByVal strTable As String, ByRef strColumnList As String(), strKeyColName As String) As String
         Dim strSelectedColumns As String = ""
         Dim strSQLOut As String = ""
@@ -115,6 +132,8 @@
         Return strWithBrackets
 
     End Function
+
+
 
     'https://docs.microsoft.com/en-us/dotnet/api/system.data.oledb.oledbdatareader?view=netframework-4.8
 End Class

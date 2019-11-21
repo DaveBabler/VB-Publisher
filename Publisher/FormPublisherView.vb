@@ -1,6 +1,6 @@
-﻿' Program:                Yachts 
+﻿' Program:                Publisher 
 ' Author:                 Dave Babler
-' Date:                   2019-1118
+' Date:                   2019-11-18
 ' Purpose:                Produces a summary report showing total revuneu, number of charters, and average hours per charter based on user input
 ' Colors used:            #ff00cc|rgb(255, 0, 204)  ~  #5a0048|rgb(90, 0, 72) (Darker shade ff0cc)
 '                         #00ccff|rgb(0, 204, 255)
@@ -33,6 +33,12 @@ Public Class FormPublisherDisplay
 
     Private Sub FormPublisherDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'This will be where a try/catch block will go to catch data 
+        'Hey the try catch is in a sub!
+        SQLCalls.TestConnection()
+
+    End Sub
+
+    Private Sub lblCompanyNameOut_Click(sender As Object, e As EventArgs) Handles lblCompanyNameOut.Click
 
     End Sub
 End Class
