@@ -37,9 +37,19 @@ Public Class FormPublisherDisplay
         'Hey the try catch is in a sub!
         SQLCalls.TestConnection()
         'Get a datatable 
-        datComboBox = SQLCalls.DataTableForComboBox(SQLCalls.SELECT_FOR_CBO)
+        ' datComboBox = SQLCalls.DataTableForComboBox(SQLCalls.SELECT_FOR_CBO)
         'fill the combo box
-        GlobalClass.PopulateComboBox(datComboBox, cboPublisher, "PubID", "Name")
+        '  GlobalClass.PopulateComboBox(datComboBox, cboPublisher, "PubID", "Name")
+
+
+        Dim adapter As New OleDb.OleDbDataAdapter(SQLCalls.SELECT_FOR_CBO, GlobalClass.OLE_DB_CON_PUBLISHERS)
+        Dim tb As New DataTable()
+        adapter.Fill(tb)
+        cboPublisher.DataSource = tb
+        cboPublisher.ValueMember = "PubID"
+        cboPublisher.DisplayMember = "Name"
+        adapter.Dispose()
+
 
 
     End Sub
@@ -48,3 +58,4 @@ Public Class FormPublisherDisplay
 
     End Sub
 End Class
+'http://1bestcsharp.blogspot.com/2017/11/vb.net-display-mysql-data-depending-on-combobox-value.html
