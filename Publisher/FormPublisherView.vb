@@ -66,7 +66,7 @@ Public Class FormPublisherDisplay
 
 
 
-        MsgBox("ProgramID: " & DirectCast(cboPublisher.SelectedItem, System.Data.DataRowView).Row.ItemArray(0).ToString())
+        Console.WriteLine("ProgramID: " & DirectCast(cboPublisher.SelectedItem, System.Data.DataRowView).Row.ItemArray(0).ToString())
         Dim intCurrentIndex As Integer = intMyInteger
         Dim strKeyCol As String = "PubID"
         Dim strSQLSelect As String
