@@ -127,8 +127,8 @@
   <data name="NotoSans_CondensedBoldItalic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotoSans-CondensedBoldItalic.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="NotoSans_CondensedItalic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotoSans-CondensedItalic.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="book-stack_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book-stack_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NotoSansArabic_Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotoSansArabic-Bold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -157,8 +157,8 @@
   <data name="book_stack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book_stack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="book-stack_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book-stack_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NotoSans_CondensedItalic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotoSans-CondensedItalic.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="NotoSansLisu_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotoSansLisu-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -199,6 +199,9 @@
   <data name="NotoSansGeorgian_Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotoSansGeorgian-Bold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="book_stack6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book_stack6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NotoSansLao_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotoSansLao-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -226,7 +229,7 @@
   <data name="NotoSansArabic_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotoSansArabic-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="book_stack6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book_stack6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BOOKSTACKFINAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOKSTACKFINAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

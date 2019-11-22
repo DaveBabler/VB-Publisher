@@ -40,10 +40,10 @@ Partial Class SplashScreen
         '
         Me.MainLayoutPanel.AutoSize = True
         Me.MainLayoutPanel.BackColor = System.Drawing.Color.Black
-        Me.MainLayoutPanel.BackgroundImage = Global.Publisher.My.Resources.Resources.book_stack6
+        Me.MainLayoutPanel.BackgroundImage = Global.Publisher.My.Resources.Resources.BOOKSTACKFINAL
         Me.MainLayoutPanel.ColumnCount = 2
         Me.MainLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243.0!))
-        Me.MainLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253.0!))
+        Me.MainLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 348.0!))
         Me.MainLayoutPanel.Controls.Add(Me.DetailsLayoutPanel, 1, 1)
         Me.MainLayoutPanel.Controls.Add(Me.ApplicationTitle, 1, 0)
         Me.MainLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -67,7 +67,7 @@ Partial Class SplashScreen
         Me.DetailsLayoutPanel.Controls.Add(Me.Copyright, 0, 1)
         Me.DetailsLayoutPanel.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.DetailsLayoutPanel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.DetailsLayoutPanel.Location = New System.Drawing.Point(246, 221)
+        Me.DetailsLayoutPanel.Location = New System.Drawing.Point(293, 221)
         Me.DetailsLayoutPanel.Name = "DetailsLayoutPanel"
         Me.DetailsLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.0!))
         Me.DetailsLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.0!))
@@ -104,7 +104,7 @@ Partial Class SplashScreen
         Me.ApplicationTitle.BackColor = System.Drawing.Color.Black
         Me.ApplicationTitle.Font = New System.Drawing.Font("Noto Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ApplicationTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ApplicationTitle.Location = New System.Drawing.Point(246, 3)
+        Me.ApplicationTitle.Location = New System.Drawing.Point(293, 3)
         Me.ApplicationTitle.Name = "ApplicationTitle"
         Me.ApplicationTitle.Size = New System.Drawing.Size(247, 212)
         Me.ApplicationTitle.TabIndex = 0

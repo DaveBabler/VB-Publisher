@@ -186,5 +186,8 @@
   <ItemGroup>
     <None Include="Resources\book_stack6.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOOKSTACKFINAL.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
