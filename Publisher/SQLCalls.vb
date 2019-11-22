@@ -109,6 +109,10 @@
     End Sub
 
     Public Shared Sub MSAccessParamaterizedSelect(strSQL As String, ByVal intKeyID As Integer)
+        'Currently just for testing, pretty much only outputs to console, 
+        'HOWEVER! It can and may end up being used to help populate a combo box.
+        'This is basically my beginning template for overloading
+
         Dim oleMSACon As New OleDb.OleDbConnection(OLE_DB_CON_PUBLISHERS)
         'Dim odaMSAccess As New OleDb.OleDbDataAdapter(strSQL, OLE_DB_CON_PUBLISHERS)
         Dim dataReturned As New DataTable
@@ -124,16 +128,14 @@
             oleMSACon.Open()
             Dim reader As OleDb.OleDbDataReader = oleMSACommand.ExecuteReader()
             Dim columns As New List(Of String)
-            For f = 0 To reader.FieldCount - 1
-                columns.Add(reader.GetName(f).ToString())
-                Console.WriteLine("===============================")
-                Console.WriteLine(reader.GetName(f).ToString())
-                Console.WriteLine("===============================")
-            Next
+
 
             While reader.Read()
                 For i = 0 To GlobalClass.dbstrPublisher_Columns.Count() - 1
+                    Console.WriteLine("===============================")
+                    Console.WriteLine(reader.GetName(i).ToString())
                     Console.WriteLine(reader(i).ToString)
+                    Console.WriteLine("===============================")
                 Next
             End While
             reader.Close()
@@ -144,6 +146,48 @@
 
 
     End Sub
+
+
+    Public Shared Sub MSAccessParamaterizedSelect(strSQL As String, ByVal intKeyID As Integer, ByRef dicToPopulate As Dictionary(Of String, String))
+        'Currently just for testing, pretty much only outputs to console, 
+        'HOWEVER! It can and may end up being used to help populate a combo box.
+        'This is basically my beginning template for overloading
+
+        Dim oleMSACon As New OleDb.OleDbConnection(OLE_DB_CON_PUBLISHERS)
+        'Dim odaMSAccess As New OleDb.OleDbDataAdapter(strSQL, OLE_DB_CON_PUBLISHERS)
+        Dim dataReturned As New DataTable
+        'Using Structure Simplifies Garbage Collection And Ensures That The Object Will Be Disposed Of Correctly Afterwards
+
+
+
+        Using oleMSACon
+            'Create command object so you can use the SQL Query
+            Dim oleMSACommand As New OleDb.OleDbCommand(strSQL, oleMSACon)
+            'add the  paramaters to the incoming query
+            oleMSACommand.Parameters.AddWithValue("ID", intKeyID.ToString())
+            oleMSACon.Open()
+            Dim reader As OleDb.OleDbDataReader = oleMSACommand.ExecuteReader()
+            Dim columns As New List(Of String)
+
+
+            While reader.Read()
+                For i = 0 To GlobalClass.dbstrPublisher_Columns.Count() - 1
+                    'Dictionary.Add(Column, Value) from database
+                    dicToPopulate.Add(reader.GetName(i).ToString(), reader(i).ToString)
+                    Console.WriteLine(reader.GetName(i).ToString())
+                    Console.WriteLine(reader(i).ToString)
+
+                Next
+            End While
+            reader.Close()
+            oleMSACon.Dispose()
+
+        End Using
+
+
+
+    End Sub
+
 
     Public Shared Function AddBrackets(strIncString As String) As String
         Dim strWithBrackets As String

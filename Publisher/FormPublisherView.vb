@@ -13,6 +13,7 @@
 
 Public Class FormPublisherDisplay
     Friend datComboBox As DataTable
+    Friend dicRowToForm As New Dictionary(Of String, String)
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         AboutBox.ShowDialog()
     End Sub
@@ -72,7 +73,10 @@ Public Class FormPublisherDisplay
         Dim strSQLSelect As String
 
         strSQLSelect = SQLCalls.ParamaterizedSQLCall("Publishers", GlobalClass.dbstrPublisher_Columns, strKeyCol)
-        SQLCalls.MSAccessParamaterizedSelect(strSQLSelect, intCurrentIndex)
+        SQLCalls.MSAccessParamaterizedSelect(strSQLSelect, intCurrentIndex, dicRowToForm)
+        For Each Pair In dicRowToForm
+            Console.WriteLine("WE have our key: {0}, and our value {1}", Pair.Key.ToString(), Pair.Value.ToString())
+        Next
     End Sub
 End Class
 'http://1bestcsharp.blogspot.com/2017/11/vb.net-display-mysql-data-depending-on-combobox-value.html
