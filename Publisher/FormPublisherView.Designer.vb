@@ -39,7 +39,7 @@ Partial Class FormPublisherDisplay
         Me.lblPublisherAddressOut = New System.Windows.Forms.Label()
         Me.lblCompanyNameOut = New System.Windows.Forms.Label()
         Me.lblPublisherNameOut = New System.Windows.Forms.Label()
-        Me.lblPublisherIDOut = New System.Windows.Forms.Label()
+        Me.lblPubIDOut = New System.Windows.Forms.Label()
         Me.lblPublisherFax = New System.Windows.Forms.Label()
         Me.lblPublisherPhone = New System.Windows.Forms.Label()
         Me.lblPublisherZip = New System.Windows.Forms.Label()
@@ -130,7 +130,7 @@ Partial Class FormPublisherDisplay
         Me.grpPublisherInfo.Controls.Add(Me.lblPublisherAddressOut)
         Me.grpPublisherInfo.Controls.Add(Me.lblCompanyNameOut)
         Me.grpPublisherInfo.Controls.Add(Me.lblPublisherNameOut)
-        Me.grpPublisherInfo.Controls.Add(Me.lblPublisherIDOut)
+        Me.grpPublisherInfo.Controls.Add(Me.lblPubIDOut)
         Me.grpPublisherInfo.Controls.Add(Me.lblPublisherFax)
         Me.grpPublisherInfo.Controls.Add(Me.lblPublisherPhone)
         Me.grpPublisherInfo.Controls.Add(Me.lblPublisherZip)
@@ -245,17 +245,17 @@ Partial Class FormPublisherDisplay
         Me.lblPublisherNameOut.Text = "A Publisher, one presumes."
         Me.lblPublisherNameOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lblPublisherIDOut
+        'lblPubIDOut
         '
-        Me.lblPublisherIDOut.AutoSize = True
-        Me.lblPublisherIDOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPublisherIDOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblPublisherIDOut.Location = New System.Drawing.Point(193, 38)
-        Me.lblPublisherIDOut.Name = "lblPublisherIDOut"
-        Me.lblPublisherIDOut.Size = New System.Drawing.Size(109, 20)
-        Me.lblPublisherIDOut.TabIndex = 9
-        Me.lblPublisherIDOut.Text = "8888888888"
-        Me.lblPublisherIDOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblPubIDOut.AutoSize = True
+        Me.lblPubIDOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPubIDOut.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblPubIDOut.Location = New System.Drawing.Point(193, 38)
+        Me.lblPubIDOut.Name = "lblPubIDOut"
+        Me.lblPubIDOut.Size = New System.Drawing.Size(109, 20)
+        Me.lblPubIDOut.TabIndex = 9
+        Me.lblPubIDOut.Text = "8888888888"
+        Me.lblPubIDOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblPublisherFax
         '
@@ -413,7 +413,7 @@ Partial Class FormPublisherDisplay
     Friend WithEvents lblPublisherAddressOut As Label
     Friend WithEvents lblCompanyNameOut As Label
     Friend WithEvents lblPublisherNameOut As Label
-    Friend WithEvents lblPublisherIDOut As Label
+    Friend WithEvents lblPubIDOut As Label
     Friend WithEvents mnuExit As ToolStripMenuItem
     Friend WithEvents TestToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -18,12 +18,15 @@
 
 
     Public Shared Sub ChangeLabelByName(ByVal Parent As Control, ByVal strLabelSuffix As String, ByVal strSearchLabelName As String, ByVal strIncomingValue As String)
+        'Recursively grabs all controls on a form
+        'If the control is a label it checks the naming conventions to see if it matches a lookup
+        'If so, it changes the text of that label.
         For Each Child As Control In Parent.Controls
             If TypeOf Child Is Label Then
                 If Child.Name.Contains(strLabelSuffix) AndAlso Child.Name.Contains(strSearchLabelName) Then
-
-                    Console.WriteLine(Child.Name.ToString())
-                    Console.WriteLine("_________________________")
+                    Child.Text = strIncomingValue
+                    'Console.WriteLine(Child.Name.ToString())
+                    'Console.WriteLine("_________________________")
                     Exit For
                 End If
             End If

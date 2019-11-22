@@ -173,7 +173,10 @@
             While reader.Read()
                 For i = 0 To GlobalClass.dbstrPublisher_Columns.Count() - 1
                     'Dictionary.Add(Column, Value) from database
-                    dicToPopulate.Add(reader.GetName(i).ToString(), reader(i).ToString)
+                    If Not dicToPopulate.ContainsKey(reader.GetName(i).ToString()) Then
+                        dicToPopulate.Add(reader.GetName(i).ToString(), reader(i).ToString)
+                    End If
+
                     Console.WriteLine(reader.GetName(i).ToString())
                     Console.WriteLine(reader(i).ToString)
 

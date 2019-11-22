@@ -63,6 +63,7 @@ Public Class FormPublisherDisplay
         Dim intMyInteger As Integer
         If TypeOf cboPublisher.SelectedValue Is Integer Then
             intMyInteger = DirectCast(cboPublisher.SelectedValue, Integer)
+            Console.WriteLine("My Integer is: {0}", intMyInteger.ToString())
         End If
 
 
@@ -76,7 +77,10 @@ Public Class FormPublisherDisplay
         SQLCalls.MSAccessParamaterizedSelect(strSQLSelect, intCurrentIndex, dicRowToForm)
         For Each Pair In dicRowToForm
             Console.WriteLine("WE have ou r key: {0}, and our value {1}", Pair.Key.ToString(), Pair.Value.ToString())
+            GlobalClass.ChangeLabelByName(Me, "Out", Pair.Key.ToString(), Pair.Value.ToString())
         Next
+        dicRowToForm.Clear()
+
     End Sub
 End Class
 'http://1bestcsharp.blogspot.com/2017/11/vb.net-display-mysql-data-depending-on-combobox-value.html
