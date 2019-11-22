@@ -123,7 +123,13 @@
             oleMSACommand.Parameters.AddWithValue("ID", intKeyID.ToString())
             oleMSACon.Open()
             Dim reader As OleDb.OleDbDataReader = oleMSACommand.ExecuteReader()
-
+            Dim columns As New List(Of String)
+            For f = 0 To reader.FieldCount - 1
+                columns.Add(reader.GetName(f).ToString())
+                Console.WriteLine("===============================")
+                Console.WriteLine(reader.GetName(f).ToString())
+                Console.WriteLine("===============================")
+            Next
 
             While reader.Read()
                 For i = 0 To GlobalClass.dbstrPublisher_Columns.Count() - 1
