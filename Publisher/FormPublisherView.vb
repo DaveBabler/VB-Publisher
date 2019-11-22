@@ -42,6 +42,9 @@ Public Class FormPublisherDisplay
         'fill the combo box
         '  GlobalClass.PopulateComboBox(datComboBox, cboPublisher, "PubID", "Name")
 
+        'Fill special dictionary for future use
+        GlobalClass.dicSpecialFixer.Add("Name", "PublisherName")
+
 
         Dim adapter As New OleDb.OleDbDataAdapter(SQLCalls.SELECT_FOR_CBO, GlobalClass.OLE_DB_CON_PUBLISHERS)
         Dim tb As New DataTable()
@@ -77,7 +80,7 @@ Public Class FormPublisherDisplay
         SQLCalls.MSAccessParamaterizedSelect(strSQLSelect, intCurrentIndex, dicRowToForm)
         For Each Pair In dicRowToForm
             Console.WriteLine("WE have ou r key: {0}, and our value {1}", Pair.Key.ToString(), Pair.Value.ToString())
-            GlobalClass.ChangeLabelByName(Me, "Out", Pair.Key.ToString(), Pair.Value.ToString())
+            GlobalClass.ChangeLabelByName(Me, "Out", Pair.Key.ToString().Replace(" ", ""), Pair.Value.ToString(), GlobalClass.dicSpecialFixer)
         Next
         dicRowToForm.Clear()
 
