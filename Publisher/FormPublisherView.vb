@@ -75,7 +75,7 @@ Public Class FormPublisherDisplay
         strSQLSelect = SQLCalls.ParamaterizedSQLCall("Publishers", GlobalClass.dbstrPublisher_Columns, strKeyCol)
         SQLCalls.MSAccessParamaterizedSelect(strSQLSelect, intCurrentIndex, dicRowToForm)
         For Each Pair In dicRowToForm
-            Console.WriteLine("WE have our key: {0}, and our value {1}", Pair.Key.ToString(), Pair.Value.ToString())
+            Console.WriteLine("WE have ou r key: {0}, and our value {1}", Pair.Key.ToString(), Pair.Value.ToString())
         Next
     End Sub
 End Class
